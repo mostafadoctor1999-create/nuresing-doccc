@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060913">
+<title>فريق التمريض الاستشاري</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060913;--teal:#00F5D4;--gold:#FFD166;--red:#FF6B81;--tx:#EAF2FF;--mu:#8A97B1;--gl:rgba(255,255,255,.055);--bd:rgba(255,255,255,.1)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0}
+html,body{background:var(--bg);color:var(--tx);font-family:Cairo,system-ui,sans-serif}
+body{min-height:100%;background:radial-gradient(600px 380px at 85% -5%,rgba(0,245,212,.14),transparent),radial-gradient(500px 360px at 0% 40%,rgba(255,209,102,.07),transparent),var(--bg);padding:env(safe-area-inset-top,0px) 14px calc(96px + env(safe-area-inset-bottom,0px));max-width:480px;margin:0 auto}
+button{font-family:inherit;color:inherit;border:0;background:none;cursor:pointer}
+svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.g{background:var(--gl);border:1px solid var(--bd);border-radius:22px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.hdr{margin-top:12px;padding:14px}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--teal),#0a8f84);display:grid;place-items:center;color:#032a26;box-shadow:0 0 24px rgba(0,245,212,.35)}
+.brand b{font-size:17px;font-weight:800}.brand small{display:block;color:var(--gold);font-size:11px;font-weight:600}
+.team{display:grid;gap:8px;margin-top:12px}
+.mem{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:16px;background:rgba(255,255,255,.04)}
+.mem.vip{background:linear-gradient(100deg,rgba(255,209,102,.16),rgba(255,209,102,.03));border:1px solid rgba(255,209,102,.35)}
+.av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:15px;background:#18213a;color:var(--teal)}
+.vip .av{background:var(--gold);color:#3a2a00}
+.mem div.t{flex:1;min-width:0}.mem b{font-size:14px}.mem span{display:block;font-size:11px;color:var(--mu)}
+.call{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(0,245,212,.12);color:var(--teal);text-decoration:none}
+.sec{font-size:13px;color:var(--mu);margin:18px 4px 8px;font-weight:600}
+.staff{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sb{padding:12px 4px;border-radius:16px;background:var(--gl);border:1px solid var(--bd);font-weight:700;font-size:13px;min-height:52px}
+.sb.on{background:var(--teal);color:#032a26;border-color:var(--teal);box-shadow:0 0 20px rgba(0,245,212,.35)}
+.sv{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sv button{position:relative;min-height:112px;padding:14px;border-radius:24px;text-align:right;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(160deg,color-mix(in srgb,var(--c) 26%,transparent),rgba(255,255,255,.03));border:1px solid color-mix(in srgb,var(--c) 55%,transparent);box-shadow:0 0 26px color-mix(in srgb,var(--c) 18%,transparent)}
+.sv button:active{transform:scale(.97)}.sv .w{grid-column:1/3;min-height:84px;flex-direction:row;align-items:center}
+.sv svg{color:var(--c);width:30px;height:30px}.sv b{font-size:15px;font-weight:800}.sv em{font-style:normal;color:var(--gold);font-weight:700;font-size:13px}
+.case{margin-bottom:10px;padding:12px}
+.sv.sm button{min-height:92px;padding:12px}.sv.sm b{font-size:14px}
+.sub{font-size:12px;color:var(--mu);font-weight:700;margin-top:4px}.vg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.vi{background:rgba(255,255,255,.05);border:1px solid var(--bd);border-radius:14px;padding:6px 2px;text-align:center}.vi small{font-size:11px;color:var(--mu)}
+.vi div{display:flex;align-items:center;justify-content:center}.vi button{width:30px;height:44px;font-size:18px;color:var(--teal)}.vi b{min-width:28px;font-size:14px}
+.vi.bad{border-color:var(--red);background:rgba(255,107,129,.12)}.vi.bad b{color:var(--red)}
+.bds{margin-top:4px;display:flex;gap:4px;flex-wrap:wrap}.bd{font-size:11px;padding:2px 8px;border-radius:8px;background:rgba(255,255,255,.08)}.bd.r{background:rgba(255,107,129,.2);color:#ffb3c0}.bd.t{background:rgba(0,245,212,.14);color:var(--teal)}
+.hum{margin-top:20px;padding:18px;border-radius:26px;background:linear-gradient(135deg,rgba(255,143,163,.2),rgba(255,209,102,.12));border:1px solid rgba(255,143,163,.45);box-shadow:0 0 36px rgba(255,143,163,.15)}
+.hum .hh{display:flex;align-items:center;gap:12px}.hum .hi{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#FF8FA3;color:#3a0a14}
+.hum b{font-size:17px;font-weight:800}.hum p{font-size:13px;color:#dccdd2;margin:12px 0;line-height:1.8}
+.hum .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}.hum .tags span{font-size:12px;padding:5px 10px;border-radius:10px;background:rgba(255,255,255,.08)}
+.row{display:flex;align-items:center;gap:12px}
+.ring{position:relative;width:64px;height:64px;flex:none}
+.ring svg{transform:rotate(-90deg);width:64px;height:64px}
+.ring circle{fill:none;stroke-width:6;stroke-linecap:round}
+.ring .bg{stroke:rgba(255,255,255,.09)}
+.ring .ic{position:absolute;inset:0;display:grid;place-items:center;color:var(--c)}
+.late .ring{animation:pl 1.3s infinite}
+@keyframes pl{50%{filter:drop-shadow(0 0 10px var(--red))}}
+.inf{flex:1;min-width:0}.inf b{font-size:15px}.inf small{display:block;color:var(--mu);font-size:12px}
+.tm{font-weight:800;font-size:15px;color:var(--c)}.late .tm{color:var(--red)}
+.pr{color:var(--gold);font-weight:800}
+.ex{margin-top:12px;padding-top:12px;border-top:1px solid var(--bd);display:grid;gap:10px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.ch{min-height:44px;padding:0 14px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid var(--bd);font-weight:700;font-size:14px}
+.ch.on{background:var(--gold);color:#3a2a00;border-color:var(--gold)}
+.ch.tl.on{background:var(--teal);color:#032a26;border-color:var(--teal)}
+.act{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ab{min-height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14px;background:rgba(255,255,255,.07);border:1px solid var(--bd)}
+.ab.p{background:var(--teal);color:#032a26;border-color:var(--teal)}.ab.w{background:#25D366;color:#04210f;border-color:#25D366}.ab.d{color:var(--red)}
+.ph{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ph label{position:relative;height:96px;border-radius:16px;border:1.5px dashed var(--bd);display:grid;place-items:center;color:var(--mu);font-size:12px;overflow:hidden;cursor:pointer}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph label span{position:absolute;bottom:4px;right:6px;background:rgba(6,9,19,.75);padding:1px 8px;border-radius:8px;font-size:11px;color:var(--tx)}
+.ph input{display:none}
+.emp{text-align:center;color:var(--mu);padding:26px 8px;font-size:14px}
+nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;padding:10px 8px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(6,9,19,.82);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--bd);z-index:20}
+nav button{display:flex;flex-direction:column;align-items:center;gap:3px;min-height:56px;justify-content:center;border-radius:16px;color:var(--mu);font-size:11px;font-weight:700}
+nav button.on{color:var(--teal);background:rgba(0,245,212,.1)}
+.big{text-align:center;padding:22px 14px}
+.big .n{font-size:44px;font-weight:800;color:var(--teal);line-height:1.1;text-shadow:0 0 28px rgba(0,245,212,.4)}
+.big small{color:var(--mu);font-size:13px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.st{padding:14px;text-align:center}.st b{display:block;font-size:22px;color:var(--gold)}.st small{font-size:12px;color:var(--mu)}
+.bar{height:10px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--gold));border-radius:6px}
+.hide .amt{filter:blur(9px);user-select:none}
+.chamber{position:relative;height:190px;margin-top:10px;overflow:hidden;display:grid;place-items:end center}
+.chamber .nz{position:absolute;top:0;width:10px;height:22px;background:#2a3454;border-radius:0 0 6px 6px}
+.drop{position:absolute;top:26px;width:16px;height:22px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:var(--teal);box-shadow:0 0 14px var(--teal);animation:fl var(--d,1s) linear forwards}
+@keyframes fl{to{transform:translateY(120px);opacity:.2}}
+.pool{width:70%;height:28px;border-radius:50% 50% 14px 14px;background:linear-gradient(var(--teal),#09877c);opacity:.55}
+.dpm{font-size:54px;font-weight:800;color:var(--teal);line-height:1}
+#toast{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:50%;transform:translate(-50%,-90px);background:#13203a;border:1px solid var(--teal);padding:10px 18px;border-radius:16px;z-index:50;font-size:14px;font-weight:600;transition:transform .3s;max-width:92%;text-align:center}
+#toast.s{transform:translate(-50%,0)}
+#vm{position:fixed;left:12px;bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:19;min-height:48px;padding:0 16px;border-radius:24px;display:flex;gap:8px;align-items:center;background:rgba(6,9,19,.88);border:1px solid var(--bd);font-weight:700;font-size:13px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+details.g{padding:0 14px;margin-bottom:10px}summary{min-height:56px;display:flex;align-items:center;font-weight:700;cursor:pointer}details ul{padding:0 18px 14px 0;line-height:1.9;font-size:14px;color:#cfd8e8}details li{margin-bottom:4px}
+#vm.on{background:var(--teal);color:#032a26;border-color:var(--teal);box-shadow:0 0 22px rgba(0,245,212,.5)}
+@media (prefers-reduced-motion:reduce){.drop,.late .ring{animation:none}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="toast"></div>
+<button id="vm" onclick="toggleMic()"><svg class="i" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zM19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></svg><span>فتح المايك</span></button>
+<nav>
+ <button data-t="home" class="on"><svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>الرئيسية</button>
+ <button data-t="pts"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>المرضى</button>
+ <button data-t="drip"><svg class="i" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg>المحاليل</button>
+ <button data-t="gd"><svg class="i" viewBox="0 0 24 24"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4zM8 9h8M8 13h6"/></svg>إرشادات</button>
+ <button data-t="shift"><svg class="i" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>تقفيل الشفت</button>
+</nav>
+<script>
+const KEY='med_lux_v2';
+const P={mahmoud:null,ali:'201279049081',mustafa:'201275646204'};
+const TEAM={mahmoud:'أ. محمود علي',ali:'أ. علي',mustafa:'أ. مصطفى'};
+const IC={
+cannula:'<path d="M4 20l9-9M13 11l3-3 4 4-3 3zM10 14l-2-2"/>',
+foot:'<rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M10.5 10.5l3 3"/>',
+surg:'<path d="M12 4v16M4 12h16"/><circle cx="12" cy="12" r="9"/>',
+inj:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',
+cam:'<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>',
+wa:'<path d="M4 5h16v11H9l-5 4z"/>',
+mic:'<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zM19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/>',
+ph:'<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+ok:'<path d="M5 13l4 4L19 7"/>',tr:'<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>',
+cross:'<path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/>',
+heart:'<path d="M12 20s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 10-7 10z"/>'};
+const ic=n=>`<svg class="i" viewBox="0 0 24 24">${IC[n]}</svg>`;
+const SV={
+c22:{n:'كانيولا زرقاء 22G',p:20,c:'#3B9DFF',h:72,i:'cannula',pl:'الكانيولا الزرقاء 22G'},
+c24:{n:'كانيولا صفراء 24G',p:30,c:'#FACC15',h:72,i:'cannula',pl:'الكانيولا الصفراء 24G'},
+dfoot:{n:'غيار قدم سكري',p:50,c:'#FF6B81',h:0,i:'foot',pl:'غيار قدم سكري'},
+dsurg:{n:'غيار جراحي منزلي',p:0,c:'#B692FF',h:0,i:'surg',pl:'غيار جراحي منزلي'},
+app:{n:'غيار عملية الزائدة',p:0,c:'#F59E0B',h:0,i:'surg',pl:'غيار عملية الزائدة الدودية'},
+gall:{n:'غيار المرارة / الحصوات',p:0,c:'#34D399',h:0,i:'surg',pl:'غيار عملية المرارة واستئصال الحصوات'},
+hern:{n:'غيار عملية فتق',p:0,c:'#38BDF8',h:0,i:'surg',pl:'غيار عملية فتق'},
+ces:{n:'غيار عملية قيصرية',p:0,c:'#F472B6',h:0,i:'surg',pl:'غيار عملية قيصرية'},
+burn:{n:'غيار حروق',p:40,c:'#FB923C',h:0,i:'foot',pl:'غيار حروق'},
+bed:{n:'غيار قرحة فراش',p:50,c:'#A3E635',h:0,i:'foot',pl:'غيار قرحة فراش'},
+cut:{n:'غيار جرح قطعي',p:30,c:'#F87171',h:0,i:'foot',pl:'غيار جرح قطعي'},
+sut:{n:'فك غرز',p:20,c:'#94A3B8',h:0,i:'cannula',pl:'فك غرز'},
+care:{n:'رعاية إنسانية متكاملة',p:0,c:'#FF8FA3',h:0,i:'heart',pl:'رعاية إنسانية متكاملة'},
+inj:{n:'حقنة / محلول',p:50,c:'#00F5D4',h:2,i:'inj',pl:'حقنة / محلول'}};
+const INS={
+c22:'يُرجى مراقبة مكان الكانيولا، وإبلاغنا فوراً عند ظهور احمرار أو تورم أو ألم أو تسرب. موعد الفحص أو التغيير بعد 72 ساعة.',
+c24:'يُرجى مراقبة مكان الكانيولا، وإبلاغنا فوراً عند ظهور احمرار أو تورم أو ألم أو تسرب. موعد الفحص أو التغيير بعد 72 ساعة.',
+dfoot:'يُرجى إبقاء الجرح نظيفاً وجافاً، وعدم فك الضمادة قبل الموعد، ومتابعة مستوى السكر بانتظام.',
+dsurg:'يُرجى إبقاء مكان العملية جافاً ونظيفاً، وإبلاغنا فوراً عند ظهور إفرازات أو ارتفاع في الحرارة.',
+inj:'يُرجى مراقبة مكان الحقن، والتواصل معنا عند ظهور أي أعراض غير معتادة.'};
+
+let S;try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!S||!Array.isArray(S.cases))S={cases:[],staff:'ali',sel:null};
+if(!Array.isArray(S.pts))S.pts=[];
+if(!Array.isArray(S.hist))S.hist=[];
+let tab='home',flt='all',hideAmt=false,D={v:500,h:4,f:20},simT=null;
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fm=n=>Number(n||0).toLocaleString('ar-EG');
+const day=()=>new Date().toDateString();
+const todays=()=>S.cases.filter(c=>c.d===day());
+const find=id=>S.cases.find(c=>String(c.id)===String(id));
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('s');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('s'),2600)}
+
+/* ---------- الرئيسية ---------- */
+function header(){
+ const m=(k,r,v,ph)=>`<div class="mem${v?' vip':''}"><div class="av">${TEAM[k].slice(3,4)}</div><div class="t"><b>${TEAM[k]}</b><span>${r}</span></div>${ph?`<a class="call" href="tel:+${ph}" aria-label="اتصال ${TEAM[k]}">${ic('ph')}</a>`:''}</div>`;
+ return `<header class="g hdr"><div class="brand"><div class="logo" onclick="logoTap()">${ic('cross')}</div><div><b>فريق التمريض الاستشاري</b><small>رعاية حرجة · جروح · زيارات منزلية</small></div></div>
+ <div class="team">${m('mahmoud','استشاري وأخصائي التمريض والرعاية الحرجة',1)}${m('ali','أخصائي العناية المركزة والطوارئ',0,P.ali)}${m('mustafa','طاقم التمريض والتدخل السريع',0,P.mustafa)}</div>${avail()}</header>`;
+}
+function ring(c){
+ const s=SV[c.svc];
+ if(!s.h)return `<div class="ring" style="--c:${s.c}"><svg viewBox="0 0 64 64"><circle class="bg" cx="32" cy="32" r="26"/><circle cx="32" cy="32" r="26" stroke="${s.c}" stroke-dasharray="163.4 0"/></svg><div class="ic">${ic(s.i)}</div></div>`;
+ const tot=s.h*3600000,left=c.done?0:tot-(Date.now()-c.t),late=left<=0&&!c.done,pc=c.done?0:Math.max(0,left/tot);
+ return `<div class="ring" style="--c:${s.c}"><svg viewBox="0 0 64 64"><circle class="bg" cx="32" cy="32" r="26"/><circle cx="32" cy="32" r="26" stroke="${late?'#FF6B81':s.c}" stroke-dasharray="${(163.4*pc).toFixed(1)} 163.4"/></svg><div class="ic">${ic(s.i)}</div></div>`;
+}
+function timeTxt(c){
+ const s=SV[c.svc];
+ if(!s.h)return c.time;
+ if(c.done)return 'تم الانتهاء';
+ const left=s.h*3600000-(Date.now()-c.t),a=Math.abs(left),h=Math.floor(a/3600000),m=Math.floor(a%3600000/60000);
+ return left<=0?`متأخر ${h}س ${m}د`:`متبقي ${h}س ${m}د`;
+}
+function card(c){
+ const s=SV[c.svc],sel=String(S.sel)===String(c.id),late=s.h&&!c.done&&Date.now()-c.t>=s.h*3600000;
+ let ex='';
+ if(sel){
+  ex=`<div class="ex">
+  <div class="chips">${[20,30,50,100,150,200,300].map(p=>`<button class="ch${c.price===p?' on':''}" onclick="setP('${c.id}',${p})">${p}</button>`).join('')}<button class="ch" onclick="setP('${c.id}',${c.price-25})">−25</button><button class="ch" onclick="setP('${c.id}',${c.price+25})">+25</button></div>
+  <div class="chips">${['mahmoud','ali','mustafa'].map(k=>`<button class="ch tl${c.staff===k?' on':''}" onclick="setS('${c.id}','${k}')">${TEAM[k]}</button>`).join('')}</div>
+  <button class="ch tl${c.consult?' on':''}" onclick="togC('${c.id}')">${c.consult?'محوّلة للاستشارة عند أ. محمود':'تحويل للاستشارة عند أ. محمود'}</button>
+  ${extra(c)}
+  <button class="ch${c.charity?' on':''}" onclick="togH('${c.id}')">${c.charity?'حالة إنسانية — بدون مقابل':'تحويل لحالة إنسانية (مجاناً)'}</button>${c.charity?`<div class="chips">${CARE.map(x=>`<button class="ch tl${(c.items||[]).includes(x)?' on':''}" onclick="togI('${c.id}','${x}')">${x}</button>`).join('')}</div>`:''}
+  <div class="ph">${['before','after'].map(k=>`<label>${c[k]?`<img src="${c[k]}" alt="">`:ic('cam')}<span>${k=='before'?'قبل':'بعد'}</span><input type="file" accept="image/*" capture="environment" onchange="photo('${c.id}','${k}',this)"></label>`).join('')}</div>
+  <div class="act"><button class="ab" onclick="nameV('${c.id}')">${ic('mic')}اسم المريض</button><button class="ab w" onclick="wa('${c.id}')">${ic('wa')}كارت واتساب</button>
+  ${s.h?`<button class="ab p" onclick="done('${c.id}')">${ic('ok')}${s.i=='cannula'?'تم التغيير':'تم الانتهاء'}</button>`:'<span></span>'}<button class="ab d" onclick="del('${c.id}')">${ic('tr')}حذف</button></div></div>`;
+ }
+ return `<div class="g case${late?' late':''}" style="--c:${s.c}"><div class="row" onclick="pick('${c.id}')">${ring(c)}<div class="inf"><b>${esc(c.pt)}</b><small>${s.n} · ${TEAM[c.staff]}${c.consult?' · استشارة':''}${c.charity?' · إنسانية':''}</small><div class="tm">${timeTxt(c)}</div>${badges(c)}</div><div class="pr amt">${c.charity?'مجاناً':c.price?fm(c.price)+'<br><small style="font-size:11px">ج.م</small>':'<small>حدد السعر</small>'}</div></div>${ex}</div>`;
+}
+function home(){
+ const t=todays(),tot=t.reduce((a,c)=>a+c.price,0);
+ return header()+`<div class="sec">المنفّذ الآن</div><div class="staff">${['mahmoud','ali','mustafa'].map(k=>`<button class="sb${S.staff===k?' on':''}" onclick="curS('${k}')">${TEAM[k]}</button>`).join('')}</div>
+ <div class="sec">كانيولات وحقن</div>${sv(['c22','c24','inj'])}<div class="sec">الغيارات</div>${sv(DR)}${charity(t.filter(c=>c.charity).length)}
+ <div class="sec">الرادار الحي · ${fm(t.length)} حالة · <span class="amt">${fm(tot)} ج.م</span></div>
+ ${t.length?'<small style="display:block;color:var(--mu);margin:-2px 4px 8px">اضغط أي بطاقة لعرض كل أدواتها</small>':''}${t.length?t.map(card).join(''):'<div class="emp">لا توجد حالات اليوم. اضغط أي خدمة للبدء.</div>'}`;
+}
+const DR=['dfoot','dsurg','app','gall','hern','ces','burn','bed','cut','sut'];
+const CARE=['علاج ودواء','غيار وجروح','كانيولا ومحاليل','متابعة منزلية','مستلزمات طبية','تغذية ودعم'];
+function sv(keys){return `<div class="sv sm">${keys.map((k,i)=>{const s=SV[k];return `<button style="--c:${s.c}" class="${keys.length%2&&i==keys.length-1?'w':''}" onclick="add('${k}')">${ic(s.i)}<div><b>${s.n}</b><br><em>${s.p?(DR.includes(k)?'يبدأ من ':'')+s.p+' ج.م':'حسب الحالة'}</em></div></button>`}).join('')}</div>`}
+function charity(n){return `<div class="hum"><div class="hh"><div class="hi">${ic('heart')}</div><div><b>مبادرة الرعاية الإنسانية</b><small style="display:block;color:var(--gold);font-size:11px;font-weight:600">لا أحد يُترك بلا علاج</small></div></div><div style="height:12px"></div><div class="tags">${CARE.map(x=>`<span>${x}</span>`).join('')}</div><button class="ab" style="width:100%;background:#FF8FA3;border-color:#FF8FA3;color:#3a0a14" onclick="add('care')">${ic('heart')}تسجيل حالة إنسانية</button><small style="display:block;margin-top:10px;color:var(--mu)">حالات إنسانية اليوم: ${fm(n)}</small></div>`}
+function togH(id){const c=find(id);c.charity=!c.charity;if(c.charity){c.pv=c.price;c.price=0;if(!c.items||!c.items.length)c.items=['علاج ودواء']}else{c.price=c.pv||SV[c.svc].p}save();render()}
+function togI(id,x){const c=find(id);c.items=c.items||[];c.items=c.items.includes(x)?c.items.filter(i=>i!=x):c.items.concat(x);save();render()}
+function cmsg(c){const s=SV[c.svc];return `السلام عليكم ورحمة الله،\n*فريق التمريض الاستشاري*\nمبادرة الرعاية الإنسانية — بإشراف الاستشاري أ. محمود علي\n\n*المريض:* ${c.pt}\n*الخدمة:* ${s.pl}\n*يشمل الدعم:* ${(c.items||[]).join('، ')}\n*الممرض المسؤول:* ${TEAM[c.staff]}\n\nهذه الخدمة مقدّمة بدون أي مقابل، ونحن معكم حتى تمام الشفاء.\n\n*تعليمات العناية:*\n${INS[c.svc]||INS.dsurg}`}
+const AL=['حساسية بنسلين','سكر','ضغط','قلب','سيولة دم'];
+const WS=['تحسّن','ثابتة','تحتاج استشارة'];
+const VS={sg:['سكر',120,10],tp:['حرارة',37,.5],pl:['نبض',80,5],bp:['ضغط',120,10]};
+const vflag=(k,v)=>k=='sg'&&(v<70||v>250)||k=='tp'&&v>=38||k=='pl'&&(v<50||v>110)||k=='bp'&&(v>=160||v<90);
+const nd=c=>new Date(c.next).toLocaleDateString('ar-EG',{weekday:'long',day:'numeric',month:'numeric'});
+function extra(c){const v=c.v||{},al=c.alg||[];return `<div class="sub">تنبيهات المريض</div><div class="chips">${AL.map(x=>`<button class="ch${al.includes(x)?' on':''}" onclick="togA('${c.id}','${x}')">${x}</button>`).join('')}</div>
+<div class="sub">قياسات سريعة (سكر · حرارة · نبض · ضغط)</div><div class="vg">${Object.keys(VS).map(k=>`<div class="vi${v[k]!=null&&vflag(k,v[k])?' bad':''}"><small>${VS[k][0]}</small><div><button onclick="vs('${c.id}','${k}',-1)">−</button><b>${v[k]!=null?v[k]:'—'}</b><button onclick="vs('${c.id}','${k}',1)">+</button></div></div>`).join('')}</div>
+<div class="sub">حالة الجرح</div><div class="chips">${WS.map((x,i)=>`<button class="ch tl${c.ws==x?' on':''}" onclick="setW('${c.id}',${i})">${x}</button>`).join('')}</div>
+<div class="sub">الزيارة القادمة${c.next?' · '+nd(c):''}</div><div class="chips">${[['غداً',1],['بعد 3 أيام',3],['بعد أسبوع',7]].map(x=>`<button class="ch tl" onclick="setN('${c.id}',${x[1]})">${x[0]}</button>`).join('')}</div>
+${c.svc=='inj'?`<div class="sub">طريقة الحقن</div><div class="chips">${['عضل','وريد','تحت الجلد','داخل الأدمة'].map(x=>`<button class="ch tl${c.rt==x?' on':''}" onclick="setR('${c.id}','${x}')">${x}</button>`).join('')}</div>`:''}
+<div class="sub">اختبار الحساسية${c.at?' · '+atTxt(c):''}</div><div class="chips"><button class="ch tl" onclick="atStart('${c.id}')">بدء انتظار 15 دقيقة</button><button class="ch tl${c.at&&c.at.res=='سلبي'?' on':''}" onclick="atRes('${c.id}','سلبي')">سلبي</button><button class="ch${c.at&&c.at.res=='إيجابي'?' on':''}" style="color:var(--red)" onclick="atRes('${c.id}','إيجابي')">إيجابي</button></div>
+<button class="ab" style="width:100%;border-color:var(--gold);color:var(--gold)" onclick="caseFile('${c.id}')">${ic('cross')}ملف المريض والأدوية</button>
+<div class="act"><button class="ab" onclick="loc('${c.id}')">${c.loc?'تحديث الموقع':'حفظ موقع المريض'}</button>${c.loc?`<button class="ab" onclick="gmap('${c.id}')">فتح الخريطة</button>`:'<span></span>'}</div>`}
+function badges(c){const b=(c.alg||[]).map(x=>`<span class="bd r">${x}</span>`);const pp=getPt(c.pt,0);if(pp&&pp.notes.length)b.unshift(`<span class="bd" style="background:rgba(255,209,102,.2);color:var(--gold)">ملف: ${esc(pp.notes[0].tx).slice(0,45)}…</span>`);if(c.ws)b.push(`<span class="bd${c.ws=='تحتاج استشارة'?' r':' t'}">جرح: ${c.ws}</span>`);if(c.rt)b.push(`<span class="bd t">${c.rt}</span>`);if(c.at&&c.at.res)b.push(`<span class="bd${c.at.res=='إيجابي'?' r':' t'}">حساسية: ${c.at.res}</span>`);else if(c.at)b.push(`<span class="bd">${atTxt(c)}</span>`);if(c.next)b.push(`<span class="bd t">زيارة: ${nd(c)}</span>`);const v=c.v||{};Object.keys(v).forEach(k=>{if(vflag(k,v[k]))b.push(`<span class="bd r">${VS[k][0]} ${v[k]}</span>`)});return b.length?`<div class="bds">${b.join('')}</div>`:''}
+function xtra(c){let t='';if(c.ws)t+='\n*حالة الجرح:* '+c.ws;if(c.next)t+='\n*الزيارة القادمة:* '+nd(c);const v=c.v||{},p=Object.keys(v).map(k=>VS[k][0]+' '+v[k]);if(p.length)t+='\n*آخر قياسات:* '+p.join('، ');return t}
+function togA(id,x){const c=find(id);c.alg=c.alg||[];c.alg=c.alg.includes(x)?c.alg.filter(i=>i!=x):c.alg.concat(x);save();render()}
+function vs(id,k,d){const c=find(id);c.v=c.v||{};const x=c.v[k]!=null?c.v[k]:VS[k][1];c.v[k]=Math.round((x+d*VS[k][2])*10)/10;sync(c);save();render()}
+function setW(id,i){const c=find(id);c.ws=WS[i];if(i==2)c.consult=true;save();render()}
+function setN(id,d){find(id).next=Date.now()+d*864e5;save();render();toast('تم تحديد الزيارة القادمة')}
+function loc(id){if(!navigator.geolocation)return toast('الموقع غير متاح على هذا الجهاز');navigator.geolocation.getCurrentPosition(p=>{find(id).loc=[p.coords.latitude,p.coords.longitude];save();render();toast('تم حفظ موقع المريض')},()=>toast('اسمح للتطبيق بالوصول للموقع'),{enableHighAccuracy:true,timeout:15000})}
+function gmap(id){const l=find(id).loc;window.open('https://www.google.com/maps?q='+l[0]+','+l[1],'_blank')}
+let pv=null;
+const nn=s=>String(s||'').replace(/^(عم|الحاج|الحاجة|أستاذ|استاذ|الأستاذ|دكتور|مدام|ست)\s+/,'').trim();
+function getPt(name,mk){if(!name||/^مريض رقم/.test(name))return null;let p=S.pts.find(x=>nn(x.name)==nn(name));if(!p&&mk){p={id:Date.now()+Math.floor(Math.random()*999),name:name.trim(),notes:[],vh:[]};S.pts.unshift(p)}return p}
+function sync(c){const p=getPt(c.pt,1);if(!p||!c.v)return;const row={cid:c.id,t:Date.now(),v:Object.assign({},c.v)},e=p.vh.find(x=>x.cid==c.id);if(e)Object.assign(e,row);else p.vh.unshift(row)}
+function listen(cb){const R=window.SpeechRecognition||window.webkitSpeechRecognition;if(!R){const t=prompt('اكتب الملاحظة');if(t)cb(t);return}const r=new R();r.lang='ar-EG';toast('تكلّم الآن...');r.onresult=e=>cb(e.results[0][0].transcript);r.onerror=()=>toast('تعذر التقاط الصوت');r.start()}
+function voiceNew(){listen(t=>{const m=t.match(/^(.*?)\s*(?:دخل|مريض|مريضة|عنده|عندها|بياخد|بتاخد|ياخد|يتناول|بيعاني)/);const name=((m&&m[1]||'').replace(/^دخل\s*/,'').trim())||t.split(' ').slice(0,2).join(' '),p=getPt(name,1);p.notes.unshift({t:Date.now(),tx:t});save();pv=p.id;tab='pts';render();toast('تم حفظ ملف: '+p.name)})}
+function voiceNote(id){listen(t=>{const p=S.pts.find(x=>x.id==id);p.notes.unshift({t:Date.now(),tx:t});save();render();toast('تمت إضافة الملاحظة')})}
+function delNote(id,i){const p=S.pts.find(x=>x.id==id);p.notes.splice(i,1);save();render()}
+function delPt(id){if(confirm('حذف ملف المريض بالكامل؟')){S.pts=S.pts.filter(x=>x.id!=id);pv=null;save();render()}}
+function openPt(id){pv=id;tab='pts';render()}
+function caseFile(cid){const c=find(cid),p=getPt(c.pt,1);if(!p)return toast('سمِّ المريض بالصوت أولاً');save();openPt(p.id)}
+const dt=t=>new Date(t).toLocaleDateString('ar-EG',{day:'numeric',month:'numeric'});
+function ptView(p){return `<button class="ch" style="margin-top:12px" onclick="pv=null;render()">رجوع للقائمة</button><div class="g big" style="margin-top:10px"><b style="font-size:22px">${esc(p.name)}</b></div>
+<div class="sec">الخدمات المسجلة</div>${svcHist(p)}<button class="ab w" style="width:100%;margin-top:10px" onclick="ptCard(${p.id})">${ic('wa')}إرسال كارت المريض واتساب</button>
+<div class="sec">الأدوية والملاحظات الدائمة</div><button class="ab p" style="width:100%" onclick="voiceNote(${p.id})">${ic('mic')}إضافة ملاحظة بالصوت</button>
+${p.notes.map((n,i)=>`<div class="g case" style="margin-top:8px"><small style="color:var(--gold)">${dt(n.t)}</small><div style="line-height:1.8;margin:4px 0 8px">${esc(n.tx)}</div><button class="ch" onclick="delNote(${p.id},${i})">حذف</button></div>`).join('')||'<div class="emp">لا توجد ملاحظات</div>'}
+<div class="sec">سجل العلامات الحيوية</div>${p.vh.map(e=>`<div class="g case"><small style="color:var(--gold)">${dt(e.t)}</small><div class="bds">${Object.keys(e.v).map(k=>`<span class="bd${vflag(k,e.v[k])?' r':''}">${VS[k][0]} ${e.v[k]}</span>`).join('')}</div></div>`).join('')||'<div class="emp">لا توجد قياسات. سجّلها من بطاقة حالة تحمل اسمه.</div>'}
+<button class="ab d" style="width:100%;margin-top:12px" onclick="delPt(${p.id})">${ic('tr')}حذف الملف</button>`}
+function pts(){const p=pv&&S.pts.find(x=>x.id==pv);if(p)return header()+ptView(p);pv=null;return header()+`<div class="sec">ملفات المرضى · ${fm(S.pts.length)}</div><button class="ab p" style="width:100%" onclick="voiceNew()">${ic('mic')}سجّل مريض بالصوت</button><small style="display:block;color:var(--mu);margin:8px 4px 14px">مثال: عم أحمد دخل مريض ضغط وسكر وبياخد علاج كذا وكذا</small>${S.pts.map(p=>`<div class="g case" onclick="openPt(${p.id})"><b>${esc(p.name)}</b><small style="display:block;color:var(--mu);margin-top:2px">${p.notes.length?esc(p.notes[0].tx).slice(0,80):'بدون ملاحظات'}</small></div>`).join('')||'<div class="emp">لا توجد ملفات بعد. اضغط الزر وتكلّم.</div>'}`}
+const VM={on:false,r:null,wl:null};
+function savePt(t){const m=t.match(/^(.*?)\s*(?:لسه|دخل|داخل|جاي|مريض|مريضة|عنده|عندها|بياخد|بتاخد|ياخد|يتناول|بيعاني)/),name=((m&&m[1])||'').trim()||t.split(' ').slice(0,2).join(' '),p=getPt(name,1);p.notes.unshift({t:Date.now(),tx:t});save();return p}
+function voiceNew(){listen(t=>{const p=savePt(t);pv=p.id;tab='pts';render();toast('تم حفظ ملف: '+p.name)})}
+function heard(t){const m=t.match(/(?:كلود|كلاود|claude)\s*(?:سجل|سجّل|اكتب)?\s*(.*)/i);if(!m||m[1].trim().length<4)return;const p=savePt(m[1].trim());toast('تم حفظ ملف: '+p.name);if(tab=='pts'||tab=='home')render()}
+function updMic(){$('#vm').classList.toggle('on',VM.on);$('#vm span').textContent=VM.on?'المايك مفتوح':'فتح المايك'}
+function toggleMic(){
+ const R=window.SpeechRecognition||window.webkitSpeechRecognition;
+ if(VM.on){VM.on=false;try{VM.r.stop()}catch(e){}try{VM.wl&&VM.wl.release()}catch(e){}updMic();toast('تم إغلاق المايك');return}
+ if(!R)return toast('هذا المتصفح لا يدعم الصوت. افتح الرابط في Chrome');
+ const r=new R();r.lang='ar-EG';r.continuous=true;r.interimResults=false;VM.r=r;VM.on=true;
+ r.onresult=e=>{for(let i=e.resultIndex;i<e.results.length;i++)if(e.results[i].isFinal)heard(e.results[i][0].transcript)};
+ r.onerror=ev=>{if(ev.error=='not-allowed'||ev.error=='service-not-allowed'){VM.on=false;updMic();toast('الميكروفون ممنوع. افتح الرابط في Chrome مباشرة واسمح به')}};
+ r.onend=()=>{if(VM.on)setTimeout(()=>{try{r.start()}catch(e){}},300)};
+ try{r.start()}catch(e){}
+ try{navigator.wakeLock.request('screen').then(w=>VM.wl=w).catch(()=>{})}catch(e){}
+ updMic();toast('المايك مفتوح. قل: كلود سجل عم أحمد لسه داخل بياخد ...');
+}
+let PRS=[],lt=0,ltT=null;
+const ALL=()=>S.cases.map(c=>({t:c.t,svc:c.svc,pt:c.pt,staff:c.staff})).concat(S.hist||[]);
+const dtl=t=>new Date(t).toLocaleString('ar-EG',{weekday:'long',day:'numeric',month:'numeric',hour:'2-digit',minute:'2-digit'});
+const dd=t=>new Date(t).toLocaleDateString('ar-EG',{weekday:'long',day:'numeric',month:'long'});
+const ofPt=p=>ALL().filter(x=>nn(x.pt)==nn(p.name)).sort((a,b)=>b.t-a.t);
+function svcHist(p){return ofPt(p).slice(0,15).map(x=>`<div class="g case"><b>${SV[x.svc]?SV[x.svc].n:''}</b><small style="display:block;color:var(--mu)">${dd(x.t)} · ${TEAM[x.staff]}</small></div>`).join('')||'<div class="emp">لا توجد خدمات مسجلة بهذا الاسم</div>'}
+function ptCard(id){const p=S.pts.find(x=>x.id==id);if(!p.phone){const q=prompt('رقم واتساب المريض');if(!q)return;let d=q.replace(/[^\d]/g,'');if(d[0]=='0')d='2'+d;p.phone=d;save()}
+ const L=ofPt(p).slice(0,8).map(x=>'• '+SV[x.svc].pl+' — '+dd(x.t)+' — '+TEAM[x.staff]).join('\n'),nx=S.cases.filter(c=>nn(c.pt)==nn(p.name)&&c.next).sort((a,b)=>b.next-a.next)[0];
+ const msg='السلام عليكم ورحمة الله،\n*فريق التمريض الاستشاري* — بإشراف الاستشاري أ. محمود علي\n\n*كارت المريض:* '+p.name+'\n\n*آخر الخدمات:*\n'+(L||'—')+(nx?'\n\n*الزيارة القادمة:* '+dd(nx.next):'')+'\n\nنحتفظ بسجلك لدينا، ونحن في خدمتك دائماً.';
+ window.open('https://wa.me/'+p.phone+'?text='+encodeURIComponent(msg),'_blank')}
+function avail(){const l=PRS.length?PRS:[S.staff];return `<div class="bd t" style="display:inline-block;margin-top:10px;font-size:12px;padding:6px 12px">المتاح الآن: ${l.map(k=>TEAM[k]).join('، ')}</div>`}
+function pres(){try{if(window._rm)window._rm.presence({staff:S.staff})}catch(e){}}
+function logoTap(){lt++;clearTimeout(ltT);ltT=setTimeout(()=>lt=0,1500);if(lt>=5){lt=0;openAdm()}}
+function openAdm(){if(!S.pin){const p=prompt('اختر رقماً سرياً من 4 أرقام للصفحة المخفية');if(!/^\d{4}$/.test(p||''))return toast('الرقم لازم يكون 4 أرقام');S.pin=p;save()}else if(prompt('الرقم السري')!==S.pin)return toast('الرقم غير صحيح');tab='adm';window.scrollTo(0,0);render()}
+function adm(){const A=ALL(),d0=new Date();d0.setHours(0,0,0,0);const t0=d0.getTime(),w0=t0-6*864e5,cnt=(f,k)=>A.filter(x=>f(x)&&(!k||x.staff==k)).length;
+ const rows=['mahmoud','ali','mustafa'].map(k=>`<div class="g case"><div class="row" style="justify-content:space-between"><b>${TEAM[k]}</b><span style="font-size:13px">اليوم ${fm(cnt(x=>x.t>=t0,k))} · الأسبوع ${fm(cnt(x=>x.t>=w0,k))} · الكل ${fm(cnt(()=>1,k))}</span></div></div>`).join('');
+ const rec=A.slice().sort((a,b)=>b.t-a.t).slice(0,25).map(x=>`<div class="g case"><b>${esc(x.pt)}</b><small style="display:block;color:var(--mu)">${SV[x.svc]?SV[x.svc].n:''} · سجّلها ${TEAM[x.staff]} · ${dtl(x.t)}</small></div>`).join('');
+ return header()+`<button class="ch" style="margin-top:12px" onclick="tab='home';render()">رجوع</button><div class="g big" style="margin-top:10px"><small>إجمالي الحالات المسجّلة</small><div class="n">${fm(A.length)}</div><small>اليوم ${fm(cnt(x=>x.t>=t0))} · آخر 7 أيام ${fm(cnt(x=>x.t>=w0))}</small></div><div class="sec">حسب الممرض</div>${rows}<div class="sec">آخر 25 حالة ومن سجّلها</div>${rec||'<div class="emp">لا توجد بيانات</div>'}`}
+function setR(id,x){find(id).rt=x;save();render()}
+function atTxt(c){if(c.at.res)return c.at.res;const m=Math.ceil((c.at.t+9e5-Date.now())/6e4);return m>0?'متبقي '+m+' د':'انتهت 15 دقيقة — سجّل النتيجة'}
+function atStart(id){find(id).at={t:Date.now(),res:''};save();render();toast('بدأ انتظار 15 دقيقة. راقب المريض')}
+function atRes(id,r){const c=find(id);c.at=c.at||{t:Date.now()};c.at.res=r;const p=getPt(c.pt,1);if(p)p.notes.unshift({t:Date.now(),tx:'اختبار حساسية '+r+' بتاريخ '+dd(Date.now())});if(r=='إيجابي'){c.alg=c.alg||[];if(!c.alg.includes('حساسية مؤكدة'))c.alg.push('حساسية مؤكدة');toast('إيجابي: لا تعطِ الدواء وبلّغ الاستشاري فوراً')}save();render()}
+const GD=[
+['طوارئ: صدمة تأقية (حساسية شديدة)',['العلامات: طفح وحكة، تورم الوجه أو الشفتين، ضيق نفس وصفير، دوخة وهبوط ضغط.','أوقف الدواء فوراً واطلب الإسعاف (123) وبلّغ أ. محمود.','اجعل المريض مستلقياً برجلين مرتفعتين، وإن كان ضيق النفس أشد فاجلسه مسنوداً.','أدرينالين عضل في الفخذ الجانبي: للبالغ 0.3 إلى 0.5 مل من تركيز 1:1000، وتُكرّر بعد 5 إلى 15 دقيقة عند الحاجة. للأطفال حسب الوزن (0.01 مجم/كجم). الجرعة تُراجع مع بروتوكول المؤسسة.','راقب النفس والنبض والوعي باستمرار ولا تترك المريض وحده.']],
+['اختبار الحساسية قبل الحقن',['اسأل دائماً عن الحساسية السابقة لأي دواء قبل أي حقنة، وسجلها في ملف المريض.','لا تُجرِ الاختبار إلا وحقنة الأدرينالين جاهزة ومعك أمر الطبيب.','الطريقة: حقن كمية صغيرة من المحلول المخفف داخل الأدمة في باطن الساعد حتى تظهر فقاعة صغيرة وعلّم حدودها.','انتظر 15 إلى 20 دقيقة مع مراقبة المريض (استخدم زر الانتظار في بطاقة الحالة).','النتيجة الإيجابية: انتفاخ وحكة أو احمرار أوسع من مكان الفقاعة (نحو 3 مم أكثر). لا تعطِ الدواء وبلّغ الاستشاري.','تنبيه: النتيجة السلبية لا تضمن عدم حدوث حساسية، لذا راقب المريض 15 إلى 30 دقيقة بعد الحقن. وكثير من الإرشادات الحديثة لا توصي بالاختبار الروتيني لكل دواء، فاتبع بروتوكول الطبيب.']],
+['أنواع الحقن ومواضعها',['قبل أي حقنة تحقّق من: المريض والدواء والجرعة والطريقة والوقت، وتاريخ الصلاحية، واغسل يديك.','عضل: الموضع الأفضل جانب الأرداف (ventrogluteal) ثم الفخذ الجانبي ثم الكتف. زاوية 90°، إبرة نحو 21-23G. تجنب العصب الوركي في الأرداف الخلفية.','تحت الجلد: البطن (بعيداً عن السرة نحو 5 سم) أو الذراع أو الفخذ. إبرة نحو 25-27G، زاوية 45-90°. بدّل المواضع (خاصة الأنسولين).','داخل الأدمة: باطن الساعد، إبرة نحو 26-27G، زاوية 10-15° وتظهر فقاعة.','وريد: تأكد من سلامة الكانيولا وعدم وجود تسرب أو ألم، واحقن ببطء حسب الدواء.','لا تُعد تغطية الإبرة، وارمها في علبة الأدوات الحادة مباشرة.']],
+['الكانيولا: المقاسات والمتابعة',['صفراء 24G: تدفق حوالي 20 مل/دقيقة، للأطفال والأوردة الدقيقة.','زرقاء 22G: نحو 36 مل/دقيقة، للاستخدام العام والمحاليل والأدوية.','بمبي 20G: نحو 60 مل/دقيقة، للمحاليل الأكبر والدم عند الحاجة.','خضراء 18G: نحو 90 مل/دقيقة، لنقل الدم والسوائل السريعة.','اختر أوردة الذراع وتجنب مفصل الانثناء والجهة المصابة بسكتة أو بعد استئصال ثدي.','التغيير عادة كل 72 إلى 96 ساعة أو عند أي علامة تهيج.','العلامات: ألم، احمرار، تورم، سخونة، خط أحمر على الوريد، تسرب. أزل الكانيولا فوراً وبلّغ.']],
+['الغيارات والجروح',['اغسل يديك والبس قفازات، وانزع الضماد القديم بلطف.','قيّم الجرح: الحجم والعمق واللون والإفراز والرائحة وما حوله، وصوّره للمقارنة.','نظّف بمحلول ملحي من المركز للخارج، ثم جفّف وضع ضماداً مناسباً وسجّل.','علامات عدوى تستدعي إبلاغ الاستشاري: احمرار ينتشر، سخونة، صديد، رائحة كريهة، حمى، ألم يزداد.','القدم السكري: افحص كل القدم وبين الأصابع، ولا مشي حافياً. لون أسود أو برودة أو انتشار الاحمرار = تحويل عاجل.','قرحة الفراش: غيّر وضع المريض كل ساعتين وراقب نقاط الضغط.','الحروق الحديثة: برّد بماء جارٍ نحو 20 دقيقة، ولا تفقع الفقاعات.']],
+['العلامات الحيوية وحدود التنبيه (للبالغ)',['حرارة 36.5 إلى 37.5، نبض 60 إلى 100، تنفس 12 إلى 20 في الدقيقة، أكسجة 95% فأكثر، ضغط حوالي 120/80.','سكر صائم 70 إلى 100، وعشوائي أقل من 140.','سكر أقل من 70: هبوط. إن كان واعياً أعطِ نحو 15 جم سكر سريع (نصف كوب عصير أو 2-3 ملعقة سكر)، وأعد القياس بعد 15 دقيقة. إن كان فاقداً للوعي فلا تعطِ شيئاً بالفم واطلب الإسعاف.','سكر أكثر من 250 مع قيء أو تنفس سريع أو نعاس: تحويل للطوارئ.','ضغط 180/120 فأكثر مع صداع أو ألم صدر أو ضعف: طوارئ. ضغط أقل من 90 مع دوخة: استلقاء ورفع الرجلين وإبلاغ الاستشاري.']],
+['مكافحة العدوى وسلامة الفريق',['اغسل يديك قبل كل مريض وبعده، واستخدم قفازات نظيفة لكل مريض.','وخزة إبرة: اغسل المكان بماء وصابون، لا تعصره، وبلّغ الاستشاري وسجّل الحادث فوراً.','التخلص من النفايات الطبية في أكياس مخصصة وليس في سلة المنزل.']],
+['تعليمات تقال للمريض بعد الخدمة',['الحقن: لا تدلّك المكان بشدة، وراقب أي احمرار أو تورم أو حكة واتصل بنا.','الغيار: ابقِ الضماد جافاً ونظيفاً ولا تفكه قبل الموعد.','الكانيولا: لا تبلّلها، ولا تحرّك الذراع بشدة، وأخبرنا عند أي ألم أو احمرار.','اتصل بالفريق أو الإسعاف عند ضيق نفس أو تورم وجه أو طفح شديد بعد أي دواء.']]
+];
+function guide(){return header()+`<div class="sec">مرجع سريع للفريق. لا يغني عن أوامر الطبيب وبروتوكول المؤسسة.</div>${GD.map((g,i)=>`<details class="g"${i==0?' open':''}><summary>${g[0]}</summary><ul>${g[1].map(x=>`<li>${x}</li>`).join('')}</ul></details>`).join('')}`}
+function add(svc){
+ const s=SV[svc],n=todays().length+1,c={id:Date.now(),d:day(),svc,price:s.p,staff:S.staff,consult:false,t:Date.now(),time:new Date().toLocaleTimeString('ar-EG',{hour:'2-digit',minute:'2-digit'}),pt:'مريض رقم '+fm(n),phone:'',before:'',after:'',done:false,al:false};
+ if(svc=='care'){c.charity=true;c.items=['علاج ودواء']}
+ S.cases.unshift(c);S.sel=c.id;save();render();toast('تم تسجيل: '+s.n);
+}
+const pick=id=>{S.sel=String(S.sel)===String(id)?null:id;save();render()};
+const curS=k=>{S.staff=k;save();pres();render()};
+const setP=(id,p)=>{const c=find(id);if(c.charity)return toast('الحالة الإنسانية بدون مقابل');c.price=Math.max(0,p);save();render()};
+const setS=(id,k)=>{find(id).staff=k;save();render()};
+const togC=id=>{const c=find(id);c.consult=!c.consult;save();render()};
+const done=id=>{const c=find(id);if(SV[c.svc].i=='cannula'){c.t=Date.now();c.al=false;toast('تم تسجيل التغيير')}else c.done=true;save();render()};
+const del=id=>{if(confirm('حذف هذه الحالة؟')){S.cases=S.cases.filter(c=>String(c.id)!==String(id));S.sel=null;save();render()}};
+function nameV(id){
+ const R=window.SpeechRecognition||window.webkitSpeechRecognition,c=find(id);
+ const fb=()=>{const n=prompt('اسم المريض');if(n){c.pt=n;sync(c);save();render()}};
+ if(!R)return fb();
+ const r=new R();r.lang='ar-EG';toast('تكلّم الآن...');
+ r.onresult=e=>{c.pt=e.results[0][0].transcript;sync(c);save();render()};r.onerror=fb;r.start();
+}
+function photo(id,k,inp){
+ const f=inp.files[0];if(!f)return;
+ const rd=new FileReader();
+ rd.onload=()=>{const im=new Image();im.onload=()=>{
+  const m=520,sc=Math.min(1,m/Math.max(im.width,im.height)),cv=document.createElement('canvas');
+  cv.width=im.width*sc;cv.height=im.height*sc;cv.getContext('2d').drawImage(im,0,0,cv.width,cv.height);
+  find(id)[k]=cv.toDataURL('image/jpeg',.6);save();render();toast('تم حفظ الصورة')};im.src=rd.result};
+ rd.readAsDataURL(f);
+}
+function wa(id){
+ const c=find(id),s=SV[c.svc];
+ if(!c.phone){const p=prompt('رقم واتساب المريض');if(!p)return;let d=p.replace(/[^\d]/g,'');if(d[0]=='0')d='2'+d;c.phone=d;save()}
+ const msg=`السلام عليكم ورحمة الله،\n*فريق التمريض الاستشاري*\nبإشراف الاستشاري أ. محمود علي\n\n*المريض:* ${c.pt}\n*الخدمة:* ${s.pl}\n*الممرض المسؤول:* ${TEAM[c.staff]}${c.consult?'\n*الحالة محوّلة لاستشارة أ. محمود علي*':''}\n\n*تعليمات العناية:*\n${INS[c.svc]||INS.dsurg}\n\nفريقنا في خدمتكم دائماً، مع تمنياتنا بالشفاء العاجل.`;
+ window.open('https://wa.me/'+c.phone+'?text='+encodeURIComponent((c.charity?cmsg(c):msg)+xtra(c)),'_blank');
+}
+
+/* ---------- المحاليل ---------- */
+function drip(){
+ const r=Math.round(D.v*D.f/(D.h*60)),opt=(a,k,fmt)=>a.map(x=>`<button class="ch tl${D[k]===x?' on':''}" onclick="dset('${k}',${x})">${fmt(x)}</button>`).join('');
+ return header()+`<div class="sec">حجم المحلول</div><div class="chips">${opt([100,250,500,1000],'v',x=>x+' مل')}</div>
+ <div class="sec">المدة</div><div class="chips">${opt([1,2,4,6,8,12],'h',x=>x+' ساعة')}</div>
+ <div class="sec">نوع الجهاز (نقطة/مل)</div><div class="chips">${opt([15,20,60],'f',x=>x==60?'ميكرو 60':x)}</div>
+ <div class="g big" style="margin-top:14px"><div class="dpm">${fm(r)}</div><small>نقطة في الدقيقة · حوالي ${fm(Math.max(1,Math.round(r/20)))} نقطة كل 3 ثوانٍ</small></div>
+ <div class="g chamber"><div class="nz" style="left:calc(50% - 5px)"></div><div id="dz"></div><div class="pool"></div></div>`;
+}
+const dset=(k,v)=>{D[k]=v;render()};
+function startSim(){
+ stopSim();
+ const r=Math.round(D.v*D.f/(D.h*60)),ms=Math.max(150,60000/r),dz=$('#dz');
+ if(!dz)return;
+ const go=()=>{const d=document.createElement('i');d.className='drop';d.style.left='calc(50% - 8px)';d.style.setProperty('--d',Math.min(1,ms*.9/1000)+'s');dz.appendChild(d);setTimeout(()=>d.remove(),1100)};
+ go();simT=setInterval(go,ms);
+}
+const stopSim=()=>{if(simT){clearInterval(simT);simT=null}};
+
+/* ---------- الشفت ---------- */
+function shift(){
+ const t=todays(),L=flt=='all'?t:t.filter(c=>c.staff==flt),tot=L.reduce((a,c)=>a+c.price,0),all=t.reduce((a,c)=>a+c.price,0)||1;
+ return header()+`<div class="sec">تقفيل الشفت والأرباح</div>
+ <div class="g big"><small>إجمالي ${flt=='all'?'الفريق':TEAM[flt]}</small><div class="n amt">${fm(tot)} <span style="font-size:18px">ج.م</span></div><small>${fm(L.length)} حالة</small></div>
+ <div class="chips" style="margin-top:12px"><button class="ch tl${flt=='all'?' on':''}" onclick="fl('all')">الكل</button>${['mahmoud','ali','mustafa'].map(k=>`<button class="ch tl${flt==k?' on':''}" onclick="fl('${k}')">${TEAM[k]}</button>`).join('')}</div>
+ <div class="g" style="margin-top:12px;padding:14px">${['mahmoud','ali','mustafa'].map(k=>{const x=t.filter(c=>c.staff==k),s=x.reduce((a,c)=>a+c.price,0);return `<div style="margin-bottom:12px"><div class="row" style="justify-content:space-between"><b>${TEAM[k]}</b><span><span class="amt pr">${fm(s)} ج.م</span> · ${fm(x.length)}</span></div><div class="bar"><i style="width:${Math.round(s/all*100)}%"></i></div></div>`}).join('')}
+ <small style="color:var(--mu)">حالات محوّلة للاستشارة: ${fm(t.filter(c=>c.consult).length)} · حالات إنسانية: ${fm(t.filter(c=>c.charity).length)}</small></div>
+ <div class="act" style="margin-top:12px"><button class="ab" onclick="hideAmt=!hideAmt;render()">${hideAmt?'إظهار المبالغ':'إخفاء المبالغ'}</button><button class="ab w" onclick="exp()">${ic('wa')}تصدير التقرير</button></div>
+ <button class="ab d" style="width:100%;margin-top:8px" onclick="closeShift()">${ic('ok')}تقفيل الشفت وبدء يوم جديد</button>`;
+}
+const fl=k=>{flt=k;render()};
+function exp(){
+ const t=todays(),line=k=>{const x=t.filter(c=>c.staff==k);return `• ${TEAM[k]}: ${fm(x.length)} حالة — ${fm(x.reduce((a,c)=>a+c.price,0))} ج.م`};
+ const txt=`*تقرير شفت فريق التمريض الاستشاري*\n${new Date().toLocaleDateString('ar-EG')}\n\nإجمالي الحالات: ${fm(t.length)}\nإجمالي الحساب: ${fm(t.reduce((a,c)=>a+c.price,0))} ج.م\n\n${['mahmoud','ali','mustafa'].map(line).join('\n')}`;
+ if(navigator.share)navigator.share({text:txt}).catch(()=>{});else window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank');
+}
+function closeShift(){
+ if(!todays().length)return toast('لا توجد حالات لتقفيلها');
+ if(confirm('سيتم مسح حالات اليوم بعد التقفيل. هل صدّرت التقرير؟')){todays().forEach(c=>S.hist.push({t:c.t,svc:c.svc,pt:c.pt,staff:c.staff}));S.cases=S.cases.filter(c=>c.d!==day());S.sel=null;save();render();toast('تم تقفيل الشفت')}
+}
+
+/* ---------- التشغيل ---------- */
+function render(){
+ stopSim();
+ document.body.classList.toggle('hide',hideAmt);
+ $('#app').innerHTML=tab=='home'?home():tab=='drip'?drip():tab=='pts'?pts():tab=='adm'?adm():tab=='gd'?guide():shift();
+ document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t==tab));
+ if(tab=='drip')startSim();
+}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;window.scrollTo(0,0);render()});
+function check(){
+ S.cases.forEach(c=>{const s=SV[c.svc];if(!s.h||c.done||c.al||Date.now()-c.t<s.h*3600000)return;c.al=true;
+  toast('تنبيه: '+s.n+' — '+c.pt+' حان موعد الفحص');
+  try{if('Notification' in window&&Notification.permission=='granted')new Notification('تنبيه',{body:s.n+' — '+c.pt})}catch(e){}});
+ save();
+}
+setInterval(()=>{check();if(tab=='home'&&!document.activeElement.matches('input'))render()},30000);
+try{if('Notification' in window&&Notification.permission=='default')document.addEventListener('click',()=>Notification.requestPermission(),{once:true})}catch(e){}
+(async()=>{try{const rm=await claude.use('room');if(!rm)return;window._rm=rm;rm.presence({staff:S.staff});rm.onPeers(ch=>{PRS=[...new Set(ch.peers.map(p=>p.presence&&p.presence.staff).filter(k=>TEAM[k]))];if(tab=='home')render()})}catch(e){}})();
+check();render();
+</script>
+</body>
+</html>
